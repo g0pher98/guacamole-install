@@ -1,0 +1,25 @@
+version: '3'
+services:
+  guacd:
+    hostname: guacamole-demon
+    restart: unless-stopped
+    image: guacamole/guacd
+  
+  mysql:
+    hostname: guacamole-db
+    restart: unless-stopped
+    image: mariadb
+  
+  guacamole:
+    hostname: guacamole/guacamole
+    restart: unless-stopped
+    image: guacamole/guacamole
+    ports:
+      - 8080:8080
+    links:
+      - guacamole-demon
+    environment:
+      GUACD_HOSTNAME: guacamole-demon
+      MYSQL_HOSTNAME: guacamole-db
+      MYSQL_USER: guacamoleuser
+      MYSQL_PASSWORD: guacamolepassword
