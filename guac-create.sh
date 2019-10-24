@@ -78,5 +78,5 @@ if [ $? -ne 0 ]; then
     echo -e "${RED}Fail${NONE}"
     exit 1
 else
-    echo -e "${GREEN}OK! Let's Connect server on 8080 port.${NONE}"
+    echo -e "${GREEN}OK! Connect server on 8080 port's /guacamole/.${NONE}"
 fi
