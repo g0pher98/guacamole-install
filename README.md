@@ -1,0 +1,2 @@
+# guacamole-install
+guacamole install
